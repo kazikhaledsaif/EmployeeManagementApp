@@ -1,9 +1,98 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+
     tools:context=".MainActivity">
 
-</android.support.constraint.ConstraintLayout>
+    <EditText
+        android:id="@+id/employeeNameET"
+        android:layout_width="match_parent"
+        android:hint="Employee Name"
+        android:layout_height="wrap_content" />
+
+
+    <EditText
+        android:id="@+id/employeeEmailET"
+        android:layout_below="@id/employeeNameET"
+        android:layout_width="match_parent"
+        android:hint="Employee Email"
+        android:inputType="textEmailAddress"
+        android:layout_height="wrap_content" />
+    <EditText
+        android:id="@+id/employeePasswordET"
+        android:layout_below="@id/employeeEmailET"
+        android:layout_width="match_parent"
+        android:inputType="textPassword"
+        android:hint="Employee Password"
+        android:layout_height="wrap_content" />
+    <EditText
+        android:id="@+id/employeeAgeET"
+        android:layout_below="@+id/employeePasswordET"
+        android:layout_width="match_parent"
+        android:hint="Employee Age"
+        android:inputType="number"
+        android:layout_height="wrap_content" />
+    <CheckBox
+        android:id="@+id/javaCB"
+        android:layout_below="@id/employeeAgeET"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Java"/>
+    <CheckBox
+        android:layout_below="@id/employeeAgeET"
+      android:layout_toRightOf="@id/javaCB"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Python"/>
+    <CheckBox
+       android:id="@+id/cCB"
+        android:layout_below="@id/javaCB"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="C"/>
+    <CheckBox
+        android:layout_below="@id/javaCB"
+        android:layout_toRightOf="@id/cCB"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="PHP"/>
+    <RadioGroup
+        android:id="@+id/languageRG"
+        android:layout_below="@id/cCB"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Male"/>
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Female"/>
+    </RadioGroup>
+<RadioGroup
+    android:id="@+id/salaryRG"
+    android:layout_below="@id/languageRG"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="wrap_content">
+    <RadioButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Based Salaried Employee"/>
+    <RadioButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hourly Salaried Employee"/>
+</RadioGroup>
+
+    <Spinner
+        android:id="@+id/locationSP"
+        android:layout_below="@id/salaryRG"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"></Spinner>
+</RelativeLayout>
